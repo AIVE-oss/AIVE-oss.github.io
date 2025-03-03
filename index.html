@@ -368,34 +368,30 @@
             }
         }
 
-        /* 页面部分样式 */
-        .page-section {
-            display: none;
-            margin: 0 auto;
-            max-width: 1100px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+        /* 页面部分样式更新 */
+        .page-container {
+            width: 100%;
+            min-height: calc(100vh - 60px);
         }
-        
+
+        .page-section {
+            width: 100%;
+            min-height: 100%;
+            display: none;  /* 默认隐藏所有section */
+        }
+
+        /* 确保home页面默认显示 */
+        #home.page-section {
+            display: block;  /* 默认显示home section */
+        }
+
         .page-section.active {
             display: block;
-            opacity: 1;
         }
 
-        /* 导航栏当前页面样式 */
+        /* 导航栏激活状态样式 */
         .nav a.active {
             background-color: var(--secondary-color);
-            position: relative;
-        }
-
-        .nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 25px;
-            right: 25px;
-            height: 3px;
-            background-color: white;
         }
 
         /* Related Conference 样式更新 */
@@ -585,589 +581,616 @@
         </div>
     </nav>
 
-    <div id="home" class="page-section active">
-        <div class="content">
-            <div class="main">
-                <h2>Welcome to AIVE 2025</h2>
-                <p>Empowering Workforce Development through Innovation Artificial Intelligence (AI) technologies—including machine learning, natural language processing, and adaptive systems—are reshaping vocational education by enabling skill-centric, industry-aligned training frameworks. These innovations empower educators and institutions to bridge the gap between theoretical knowledge and practical workplace competencies, preparing learners for evolving labor market demands. As industries increasingly prioritize digital fluency and technical proficiency, vocational educators face challenges in delivering scalable, up-to-date training programs that address rapid technological advancements. AI-driven solutions, recognized for their capabilities in personalized learning pathways, real-time skill assessment, and automated content adaptation, are proving critical for modernizing vocational education. Applications range from AI-powered simulation platforms for hands-on technical training to intelligent career guidance systems that align learner profiles with industry needs, while fostering equitable access to lifelong learning opportunities.</p>
+    <div class="page-container">
+        <div id="home" class="page-section active">
+            <div class="content">
+                <div class="main">
+                    <h2>Welcome to AIVE 2025</h2>
+                    <p>Empowering Workforce Development through Innovation Artificial Intelligence (AI) technologies—including machine learning, natural language processing, and adaptive systems—are reshaping vocational education by enabling skill-centric, industry-aligned training frameworks. These innovations empower educators and institutions to bridge the gap between theoretical knowledge and practical workplace competencies, preparing learners for evolving labor market demands. As industries increasingly prioritize digital fluency and technical proficiency, vocational educators face challenges in delivering scalable, up-to-date training programs that address rapid technological advancements. AI-driven solutions, recognized for their capabilities in personalized learning pathways, real-time skill assessment, and automated content adaptation, are proving critical for modernizing vocational education. Applications range from AI-powered simulation platforms for hands-on technical training to intelligent career guidance systems that align learner profiles with industry needs, while fostering equitable access to lifelong learning opportunities.</p>
 
-                <h2>Important Dates</h2>
-                <div class="important-dates-grid">
-                    <div class="date-item">
-                        <span class="date-label">Early-round Paper Due:</span>
-                        <span class="date-value">May 1, 2025</span>
+                    <h2>Important Dates</h2>
+                    <div class="important-dates-grid">
+                        <div class="date-item">
+                            <span class="date-label">Early-round Paper Due:</span>
+                            <span class="date-value">May 1, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Early-round Notification:</span>
+                            <span class="date-value">May 31, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Second-round Paper Due:</span>
+                            <span class="date-value">July 1, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Second-round Notification:</span>
+                            <span class="date-value">July 31, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Camera-ready Due:</span>
+                            <span class="date-value">August 15, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <span class="date-label">Conference Dates:</span>
+                            <span class="date-value">October, 2025</span>
+                        </div>
                     </div>
-                    <div class="date-item">
-                        <span class="date-label">Early-round Notification:</span>
-                        <span class="date-value">May 31, 2025</span>
-                    </div>
-                    <div class="date-item">
-                        <span class="date-label">Second-round Paper Due:</span>
-                        <span class="date-value">July 1, 2025</span>
-                    </div>
-                    <div class="date-item">
-                        <span class="date-label">Second-round Notification:</span>
-                        <span class="date-value">July 31, 2025</span>
-                    </div>
-                    <div class="date-item">
-                        <span class="date-label">Camera-ready Due:</span>
-                        <span class="date-value">August 15, 2025</span>
-                    </div>
-                    <div class="date-item">
-                        <span class="date-label">Conference Dates:</span>
-                        <span class="date-value">October, 2025</span>
-                    </div>
-                </div>
 
-                <h2>Workshop topics of interest include, but are not limited to, the following:</h2>
-                <ul class="topics-list">
-                    <li>AI-driven curriculum design for industry-specific skill development</li>
-                    <li>Adaptive assessment tools for competency-based certification</li>
-                    <li>Ethical frameworks for AI deployment in vocational training</li>
-                    <li>Collaborative models between educational institutions and employers</li>
-                </ul>
+                    <h2>Workshop topics of interest include, but are not limited to, the following:</h2>
+                    <ul class="topics-list">
+                        <li>AI-driven curriculum design for industry-specific skill development</li>
+                        <li>Adaptive assessment tools for competency-based certification</li>
+                        <li>Ethical frameworks for AI deployment in vocational training</li>
+                        <li>Collaborative models between educational institutions and employers</li>
+                    </ul>
 
-                <h2>Related Conference</h2>
-                <div class="related-conference">
-                    <h3>Previous ICWL Conferences</h3>
-                    <div class="conference-history">
-                        <div class="conference-year">
-                            <span class="year-marker">2023</span>
-                            <span class="conference-date">26-28 Nov</span>
-                            <span class="conference-location">Sydney, Australia</span>
-                            <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-981-99-8385-8" class="link">16 papers</a></span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2022</span>
-                            <span class="conference-date">21-23 Nov</span>
-                            <span class="conference-location">Tenerife, Spain</span>
-                            <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-031-33023-0" class="link">51 papers</a></span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2021</span>
-                            <span class="conference-date">13-14 Nov</span>
-                            <span class="conference-location">Macau, China</span>
-                            <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-030-90785-3" class="link">17 papers</a></span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2020</span>
-                            <span class="conference-date">22-24 Oct</span>
-                            <span class="conference-location">Ningbo, China</span>
-                            <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-030-66906-5" class="link">45 papers</a></span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2019</span>
-                            <span class="conference-date">23-25 Sep</span>
-                            <span class="conference-location">Magdeburg, Germany</span>
-                            <span class="paper-count">38 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2018</span>
-                            <span class="conference-date">22-24 Aug</span>
-                            <span class="conference-location">Chiang Mai, Thailand</span>
-                            <span class="paper-count">15 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2017</span>
-                            <span class="conference-date">20-22 Sep</span>
-                            <span class="conference-location">Cape Town, South Africa</span>
-                            <span class="paper-count">25 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2016</span>
-                            <span class="conference-date">26-29 Oct</span>
-                            <span class="conference-location">Rome, Italy</span>
-                            <span class="paper-count">33 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2015</span>
-                            <span class="conference-date">5-8 Nov</span>
-                            <span class="conference-location">Guangzhou, China</span>
-                            <span class="paper-count">49 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2014</span>
-                            <span class="conference-date">14-17 Aug</span>
-                            <span class="conference-location">Tallinn, Estonia</span>
-                            <span class="paper-count">58 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2013</span>
-                            <span class="conference-date">6-9 Oct</span>
-                            <span class="conference-location">Kenting, Taiwan</span>
-                            <span class="paper-count">64 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2012</span>
-                            <span class="conference-date">2-4 Sep</span>
-                            <span class="conference-location">Sinaia, Romania</span>
-                            <span class="paper-count">75 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2011</span>
-                            <span class="conference-date">8-10 Dec</span>
-                            <span class="conference-location">Hong Kong, China</span>
-                            <span class="paper-count">36 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2010</span>
-                            <span class="conference-date">7-11 Dec</span>
-                            <span class="conference-location">Shanghai, China</span>
-                            <span class="paper-count">79 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2009</span>
-                            <span class="conference-date">19-21 Aug</span>
-                            <span class="conference-location">Aachen, Germany</span>
-                            <span class="paper-count">55 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2008</span>
-                            <span class="conference-date">20-22 Aug</span>
-                            <span class="conference-location">Jinhua, China</span>
-                            <span class="paper-count">53 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2007</span>
-                            <span class="conference-date">15-17 Aug</span>
-                            <span class="conference-location">Edinburgh, UK</span>
-                            <span class="paper-count">56 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2006</span>
-                            <span class="conference-date">19-21 Jul</span>
-                            <span class="conference-location">Penang, Malaysia</span>
-                            <span class="paper-count">32 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2005</span>
-                            <span class="conference-date">31 Jul-3 Aug</span>
-                            <span class="conference-location">Hong Kong, China</span>
-                            <span class="paper-count">42 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2004</span>
-                            <span class="conference-date">8-11 Aug</span>
-                            <span class="conference-location">Beijing, China</span>
-                            <span class="paper-count">58 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2003</span>
-                            <span class="conference-date">18-20 Aug</span>
-                            <span class="conference-location">Melbourne, Australia</span>
-                            <span class="paper-count">50 papers</span>
-                        </div>
-                        <div class="conference-year">
-                            <span class="year-marker">2002</span>
-                            <span class="conference-date">17-19 Aug</span>
-                            <span class="conference-location">Hong Kong, China</span>
-                            <span class="paper-count">35 papers</span>
+                    <h2>Related Conference</h2>
+                    <div class="related-conference">
+                        <h3>Previous ICWL Conferences</h3>
+                        <div class="conference-history">
+                            <div class="conference-year">
+                                <span class="year-marker">2023</span>
+                                <span class="conference-date">26-28 Nov</span>
+                                <span class="conference-location">Sydney, Australia</span>
+                                <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-981-99-8385-8" class="link">16 papers</a></span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2022</span>
+                                <span class="conference-date">21-23 Nov</span>
+                                <span class="conference-location">Tenerife, Spain</span>
+                                <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-031-33023-0" class="link">51 papers</a></span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2021</span>
+                                <span class="conference-date">13-14 Nov</span>
+                                <span class="conference-location">Macau, China</span>
+                                <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-030-90785-3" class="link">17 papers</a></span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2020</span>
+                                <span class="conference-date">22-24 Oct</span>
+                                <span class="conference-location">Ningbo, China</span>
+                                <span class="paper-count"><a href="https://link.springer.com/book/10.1007/978-3-030-66906-5" class="link">45 papers</a></span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2019</span>
+                                <span class="conference-date">23-25 Sep</span>
+                                <span class="conference-location">Magdeburg, Germany</span>
+                                <span class="paper-count">38 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2018</span>
+                                <span class="conference-date">22-24 Aug</span>
+                                <span class="conference-location">Chiang Mai, Thailand</span>
+                                <span class="paper-count">15 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2017</span>
+                                <span class="conference-date">20-22 Sep</span>
+                                <span class="conference-location">Cape Town, South Africa</span>
+                                <span class="paper-count">25 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2016</span>
+                                <span class="conference-date">26-29 Oct</span>
+                                <span class="conference-location">Rome, Italy</span>
+                                <span class="paper-count">33 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2015</span>
+                                <span class="conference-date">5-8 Nov</span>
+                                <span class="conference-location">Guangzhou, China</span>
+                                <span class="paper-count">49 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2014</span>
+                                <span class="conference-date">14-17 Aug</span>
+                                <span class="conference-location">Tallinn, Estonia</span>
+                                <span class="paper-count">58 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2013</span>
+                                <span class="conference-date">6-9 Oct</span>
+                                <span class="conference-location">Kenting, Taiwan</span>
+                                <span class="paper-count">64 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2012</span>
+                                <span class="conference-date">2-4 Sep</span>
+                                <span class="conference-location">Sinaia, Romania</span>
+                                <span class="paper-count">75 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2011</span>
+                                <span class="conference-date">8-10 Dec</span>
+                                <span class="conference-location">Hong Kong, China</span>
+                                <span class="paper-count">36 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2010</span>
+                                <span class="conference-date">7-11 Dec</span>
+                                <span class="conference-location">Shanghai, China</span>
+                                <span class="paper-count">79 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2009</span>
+                                <span class="conference-date">19-21 Aug</span>
+                                <span class="conference-location">Aachen, Germany</span>
+                                <span class="paper-count">55 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2008</span>
+                                <span class="conference-date">20-22 Aug</span>
+                                <span class="conference-location">Jinhua, China</span>
+                                <span class="paper-count">53 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2007</span>
+                                <span class="conference-date">15-17 Aug</span>
+                                <span class="conference-location">Edinburgh, UK</span>
+                                <span class="paper-count">56 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2006</span>
+                                <span class="conference-date">19-21 Jul</span>
+                                <span class="conference-location">Penang, Malaysia</span>
+                                <span class="paper-count">32 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2005</span>
+                                <span class="conference-date">31 Jul-3 Aug</span>
+                                <span class="conference-location">Hong Kong, China</span>
+                                <span class="paper-count">42 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2004</span>
+                                <span class="conference-date">8-11 Aug</span>
+                                <span class="conference-location">Beijing, China</span>
+                                <span class="paper-count">58 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2003</span>
+                                <span class="conference-date">18-20 Aug</span>
+                                <span class="conference-location">Melbourne, Australia</span>
+                                <span class="paper-count">50 papers</span>
+                            </div>
+                            <div class="conference-year">
+                                <span class="year-marker">2002</span>
+                                <span class="conference-date">17-19 Aug</span>
+                                <span class="conference-location">Hong Kong, China</span>
+                                <span class="paper-count">35 papers</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 添加组织机构部分 -->
-    <div id="organization" class="page-section">
-        <div class="content">
-            <div class="main">
-                <h2>General Co-Chairs</h2>
-                <ul class="committee-list">
-                    <li>
-                        <img src="img/head.png" alt="Tianyong Hao" class="committee-avatar">
-                        <div>
-                            <span class="name">Tianyong Hao</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="img/head.png" alt="Fu Lee Wang" class="committee-avatar">
-                        <div>
-                            <span class="name">Fu Lee Wang</span>, 
-                            <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <h2>Program Committee Co-Chairs</h2>
-                <ul class="committee-list">
-                    <li><img src="img/head.png" alt="Wenxiu Xie" class="committee-avatar">Wenxiu Xie, Guangdong Polytechnic Normal University, China</li>
-                    <li><img src="img/head.png" alt="Xiaoyong Hu" class="committee-avatar">Xiaoyong Hu, South China Normal University, China</li>
-                    <li><img src="img/head.png" alt="Tao Gong" class="committee-avatar">Tao Gong, Google, USA</li>
-                </ul>
-
-                <h2>Organizing Committee Co-Chairs</h2>
-                <ul class="committee-list">
-                    <li>
-                        <img src="img/head.png" alt="Yong Li" class="committee-avatar">
-                        <div>
-                            <span class="name">Yong Li</span>, 
-                            <span class="affiliation">Guangdong University of Education, China</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="img/head.png" alt="Zili Chen" class="committee-avatar">
-                        <div>
-                            <span class="name">Zili Chen</span>, 
-                            <span class="affiliation">The Hong Kong Polytechnic University, Hong Kong SAR</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <h2>Publication Co-Chairs</h2>
-                <ul class="committee-list">
-                    <li>
-                        <img src="img/head.png" alt="Shengyi Jiang" class="committee-avatar">
-                        <div>
-                            <span class="name">Shengyi Jiang</span>, 
-                            <span class="affiliation">Guangdong University of Foreign Studies, China</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="img/head.png" alt="Nana Jin" class="committee-avatar">
-                        <div>
-                            <span class="name">Nana Jin</span>, 
-                            <span class="affiliation">Shenzhen University, Shenzhen, China</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <h2>Publicity Co-Chairs</h2>
-                <ul class="committee-list">
-                    <li>
-                        <img src="img/head.png" alt="Haijun Zhang" class="committee-avatar">
-                        <div>
-                            <span class="name">Haijun Zhang</span>, 
-                            <span class="affiliation">Harbin Institute of Technology (Shenzhen), China</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="img/head.png" alt="Lap-Kei Lee" class="committee-avatar">
-                        <div>
-                            <span class="name">Lap-Kei Lee</span>, 
-                            <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <h2>Program Committee</h2>
-                <div class="program-committee">
-                    <ul>
+        <div id="organization" class="page-section">
+            <div class="content">
+                <div class="main">
+                    <h2>General Co-Chairs</h2>
+                    <ul class="committee-list">
                         <li>
-                            <span class="name">Haitao Wang</span>, 
-                            <span class="affiliation">China National Institute of Standardization, China</span>
+                            <img src="img/head.png" alt="Tianyong Hao" class="committee-avatar">
+                            <div>
+                                <span class="name">Tianyong Hao</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </div>
                         </li>
                         <li>
-                            <span class="name">Jun Yan</span>, 
-                            <span class="affiliation">Yidu Cloud Private Equity Management (Beijing), China</span>
-                        </li>
-                        <li>
-                            <span class="name">Ruoyao Ding</span>, 
-                            <span class="affiliation">Guangdong University of Foreign Studies, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Haijun Zhang</span>, 
-                            <span class="affiliation">Harbin Institute of Technology (Shenzhen), China</span>
-                        </li>
-                        <li>
-                            <span class="name">Zhenguo Yang</span>, 
-                            <span class="affiliation">Guangdong University of Technology, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Haitao Wang</span>, 
-                            <span class="affiliation">China National Institute of Standardization, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Jun Yan</span>, 
-                            <span class="affiliation">Yidu Cloud Private Equity Management (Beijing), China</span>
-                        </li>
-                        <li>
-                            <span class="name">Ruoyao Ding</span>, 
-                            <span class="affiliation">Guangdong University of Foreign Studies, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Hai Liu</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Zili Chen</span>, 
-                            <span class="affiliation">The Hong Kong Polytechnic University, Hong Kong SAR</span>
-                        </li>
-                        <li>
-                            <span class="name">Nana Jin</span>, 
-                            <span class="affiliation">Shenzhen University, Shenzhen, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Enliang Yan</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Choujun Zhan</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Likeng Liang</span>, 
-                            <span class="affiliation">Guangzhou Nanfang University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Heng Weng</span>, 
-                            <span class="affiliation">Guangzhou University of Chinese Medicine, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Kun Zeng</span>, 
-                            <span class="affiliation">Sun Yat-Sen University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Kiyong Lee</span>, 
-                            <span class="affiliation">Korea University, South Korea</span>
-                        </li>
-                        <li>
-                            <span class="name">Xinyu Cao</span>, 
-                            <span class="affiliation">China National Institute of Standardization, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Jie Wei</span>, 
-                            <span class="affiliation">China National Institute of Standardization, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Yuanyuan Mu</span>, 
-                            <span class="affiliation">Chaohu University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Tao Gong</span>, 
-                            <span class="affiliation">Google, USA</span>
-                        </li>
-                        <li>
-                            <span class="name">Shengyi Jiang</span>, 
-                            <span class="affiliation">Guangdong University of Foreign Studies, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Fu Lee Wang</span>, 
-                            <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
-                        </li>
-                        <li>
-                            <span class="name">Wenxiu Xie</span>, 
-                            <span class="affiliation">Guangdong Polytechnic Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Yong Li</span>, 
-                            <span class="affiliation">Guangdong University of Education, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Xiaoyong Hu</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Chunxia Zhang</span>, 
-                            <span class="affiliation">Beijing Institute of Technology, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Yingyi Zhuang</span>, 
-                            <span class="affiliation">The Chinese University of Hong Kong (Shenzhen), China</span>
-                        </li>
-                        <li>
-                            <span class="name">Tianyong Hao</span>, 
-                            <span class="affiliation">South China Normal University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Tiezheng Mao</span>, 
-                            <span class="affiliation">Waseda University, Japan</span>
-                        </li>
-                        <li>
-                            <span class="name">Dabin Lin</span>, 
-                            <span class="affiliation">Guangzhou Mumu Information Technology Co., Ltd., China</span>
-                        </li>
-                        <li>
-                            <span class="name">Junjie Chen</span>, 
-                            <span class="affiliation">The University of Tokyo, Japan</span>
-                        </li>
-                        <li>
-                            <span class="name">Ru Peng</span>, 
-                            <span class="affiliation">Zhejiang University, China</span>
-                        </li>
-                        <li>
-                            <span class="name">Ke Hu</span>, 
-                            <span class="affiliation">The Chinese University of Hong Kong (Shenzhen), China</span>
+                            <img src="img/head.png" alt="Fu Lee Wang" class="committee-avatar">
+                            <div>
+                                <span class="name">Fu Lee Wang</span>, 
+                                <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
+                            </div>
                         </li>
                     </ul>
+
+                    <h2>Program Committee Co-Chairs</h2>
+                    <ul class="committee-list">
+                        <li><img src="img/head.png" alt="Wenxiu Xie" class="committee-avatar">Wenxiu Xie, Guangdong Polytechnic Normal University, China</li>
+                        <li><img src="img/head.png" alt="Xiaoyong Hu" class="committee-avatar">Xiaoyong Hu, South China Normal University, China</li>
+                        <li><img src="img/head.png" alt="Tao Gong" class="committee-avatar">Tao Gong, Google, USA</li>
+                    </ul>
+
+                    <h2>Organizing Committee Co-Chairs</h2>
+                    <ul class="committee-list">
+                        <li>
+                            <img src="img/head.png" alt="Yong Li" class="committee-avatar">
+                            <div>
+                                <span class="name">Yong Li</span>, 
+                                <span class="affiliation">Guangdong University of Education, China</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/head.png" alt="Zili Chen" class="committee-avatar">
+                            <div>
+                                <span class="name">Zili Chen</span>, 
+                                <span class="affiliation">The Hong Kong Polytechnic University, Hong Kong SAR</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Publication Co-Chairs</h2>
+                    <ul class="committee-list">
+                        <li>
+                            <img src="img/head.png" alt="Shengyi Jiang" class="committee-avatar">
+                            <div>
+                                <span class="name">Shengyi Jiang</span>, 
+                                <span class="affiliation">Guangdong University of Foreign Studies, China</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/head.png" alt="Nana Jin" class="committee-avatar">
+                            <div>
+                                <span class="name">Nana Jin</span>, 
+                                <span class="affiliation">Shenzhen University, Shenzhen, China</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Publicity Co-Chairs</h2>
+                    <ul class="committee-list">
+                        <li>
+                            <img src="img/head.png" alt="Haijun Zhang" class="committee-avatar">
+                            <div>
+                                <span class="name">Haijun Zhang</span>, 
+                                <span class="affiliation">Harbin Institute of Technology (Shenzhen), China</span>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/head.png" alt="Lap-Kei Lee" class="committee-avatar">
+                            <div>
+                                <span class="name">Lap-Kei Lee</span>, 
+                                <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Program Committee</h2>
+                    <div class="program-committee">
+                        <ul>
+                            <li>
+                                <span class="name">Haitao Wang</span>, 
+                                <span class="affiliation">China National Institute of Standardization, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Jun Yan</span>, 
+                                <span class="affiliation">Yidu Cloud Private Equity Management (Beijing), China</span>
+                            </li>
+                            <li>
+                                <span class="name">Ruoyao Ding</span>, 
+                                <span class="affiliation">Guangdong University of Foreign Studies, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Haijun Zhang</span>, 
+                                <span class="affiliation">Harbin Institute of Technology (Shenzhen), China</span>
+                            </li>
+                            <li>
+                                <span class="name">Zhenguo Yang</span>, 
+                                <span class="affiliation">Guangdong University of Technology, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Haitao Wang</span>, 
+                                <span class="affiliation">China National Institute of Standardization, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Jun Yan</span>, 
+                                <span class="affiliation">Yidu Cloud Private Equity Management (Beijing), China</span>
+                            </li>
+                            <li>
+                                <span class="name">Ruoyao Ding</span>, 
+                                <span class="affiliation">Guangdong University of Foreign Studies, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Hai Liu</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Zili Chen</span>, 
+                                <span class="affiliation">The Hong Kong Polytechnic University, Hong Kong SAR</span>
+                            </li>
+                            <li>
+                                <span class="name">Nana Jin</span>, 
+                                <span class="affiliation">Shenzhen University, Shenzhen, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Enliang Yan</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Choujun Zhan</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Likeng Liang</span>, 
+                                <span class="affiliation">Guangzhou Nanfang University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Heng Weng</span>, 
+                                <span class="affiliation">Guangzhou University of Chinese Medicine, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Kun Zeng</span>, 
+                                <span class="affiliation">Sun Yat-Sen University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Kiyong Lee</span>, 
+                                <span class="affiliation">Korea University, South Korea</span>
+                            </li>
+                            <li>
+                                <span class="name">Xinyu Cao</span>, 
+                                <span class="affiliation">China National Institute of Standardization, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Jie Wei</span>, 
+                                <span class="affiliation">China National Institute of Standardization, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Yuanyuan Mu</span>, 
+                                <span class="affiliation">Chaohu University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Tao Gong</span>, 
+                                <span class="affiliation">Google, USA</span>
+                            </li>
+                            <li>
+                                <span class="name">Shengyi Jiang</span>, 
+                                <span class="affiliation">Guangdong University of Foreign Studies, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Fu Lee Wang</span>, 
+                                <span class="affiliation">Hong Kong Metropolitan University, Hong Kong SAR</span>
+                            </li>
+                            <li>
+                                <span class="name">Wenxiu Xie</span>, 
+                                <span class="affiliation">Guangdong Polytechnic Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Yong Li</span>, 
+                                <span class="affiliation">Guangdong University of Education, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Xiaoyong Hu</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Chunxia Zhang</span>, 
+                                <span class="affiliation">Beijing Institute of Technology, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Yingyi Zhuang</span>, 
+                                <span class="affiliation">The Chinese University of Hong Kong (Shenzhen), China</span>
+                            </li>
+                            <li>
+                                <span class="name">Tianyong Hao</span>, 
+                                <span class="affiliation">South China Normal University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Tiezheng Mao</span>, 
+                                <span class="affiliation">Waseda University, Japan</span>
+                            </li>
+                            <li>
+                                <span class="name">Dabin Lin</span>, 
+                                <span class="affiliation">Guangzhou Mumu Information Technology Co., Ltd., China</span>
+                            </li>
+                            <li>
+                                <span class="name">Junjie Chen</span>, 
+                                <span class="affiliation">The University of Tokyo, Japan</span>
+                            </li>
+                            <li>
+                                <span class="name">Ru Peng</span>, 
+                                <span class="affiliation">Zhejiang University, China</span>
+                            </li>
+                            <li>
+                                <span class="name">Ke Hu</span>, 
+                                <span class="affiliation">The Chinese University of Hong Kong (Shenzhen), China</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 添加投稿部分 -->
-    <div id="submission" class="page-section">
-        <div class="content">
-            <div class="main">
-                <h2>Paper Submission</h2>
-                <p>All submissions must be in PDF format. Authors should avoid the use of non-English fonts to prevent problems with printing and viewing. All accepted papers will be published by Springer. Please follow strictly the instructions for LNCS authors. Springer's LNCS site offers style files and information. Format for the submission are either Long Paper (12-15 pages) or Short Paper (6-11 pages), including main content and references. Extra pages will have a cost of 100 AUD to Springer German publication.</p>
-                
-                <p>Submissions MUST not have been published previously, and must not be under review for publication while being considered for GAIE. This applies also to papers with significant overlapping contributions. Authors are advised to interpret these limitations strictly and to contact the workshop chairs in case of doubt.</p>
-                
-                <p>Submissions MUST follow LNCS (Lecture Notes in Computer Science) format. We encourage authors to cite related work comprehensively, and when citing conference papers please also consider to cite their extended journal versions if applicable.</p>
-                
-                <h2>Paper Submission System is Available at:</h2>
-                <p><a href="https://easychair.org/conferences/?conf=gaie2024" class="link">https://easychair.org/conferences/?conf=gaie2024</a></p>
+        <div id="submission" class="page-section">
+            <div class="content">
+                <div class="main">
+                    <h2>Paper Submission</h2>
+                    <p>All submissions must be in PDF format. Authors should avoid the use of non-English fonts to prevent problems with printing and viewing. All accepted papers will be published by Springer. Please follow strictly the instructions for LNCS authors. Springer's LNCS site offers style files and information. Format for the submission are either Long Paper (12-15 pages) or Short Paper (6-11 pages), including main content and references. Extra pages will have a cost of 100 AUD to Springer German publication.</p>
+                    
+                    <p>Submissions MUST not have been published previously, and must not be under review for publication while being considered for GAIE. This applies also to papers with significant overlapping contributions. Authors are advised to interpret these limitations strictly and to contact the workshop chairs in case of doubt.</p>
+                    
+                    <p>Submissions MUST follow LNCS (Lecture Notes in Computer Science) format. We encourage authors to cite related work comprehensively, and when citing conference papers please also consider to cite their extended journal versions if applicable.</p>
+                    
+                    <h2>Paper Submission System is Available at:</h2>
+                    <p><a href="https://easychair.org/conferences/?conf=gaie2024" class="link">https://easychair.org/conferences/?conf=gaie2024</a></p>
 
-                <h2>Camera-Ready Instruction</h2>
-                <p>1. FINAL PAPER: Please submit the files belonging to your camera-ready paper using your EasyChair account. Follow the instructions after the login for uploading two files:</p>
-                <ul class="submission-list">
-                    <li>either a zipped file containing all your LaTeX sources or a Word file in the RTF format; and</li>
-                    <li>the PDF version of your camera-ready paper</li>
-                </ul>
-                
-                <p>The page limit is 12-15 pages for Full Papers and 6-11 pages for Short Papers and is strict. Please follow strictly the author instructions of Springer-Verlag when preparing the final version.</p>
-                <ul class="submission-list">
-                    <li><a href="https://protect-au.mimecast.com/s/1VGENCDvyoHEDqmLfcYD?domain=springer.com" class="link">https://protect-au.mimecast.com/s/1VGENCDvyoHEDqmLfcYD?domain=springer.com</a></li>
-                </ul>
-                
-                <p>Our publisher has recently introduced an extra control loop, once data processing is finished, they will contact all corresponding authors and ask them to check their papers. We expect this to happen shortly before the printing of the proceedings. At that time your quick interaction with Springer-Verlag will be greatly appreciated.</p>
-                
-                <p>2. COPYRIGHT: Please upload a signed and completed copyright form to us as soon as possible. The Springer copyright form template can be found at <a href="#" class="link">HERE</a>.</p>
-                
-                <p>It is sufficient for one of the authors to sign the copyright form. You can scan the form into PDF or any other standard image format.</p>
+                    <h2>Camera-Ready Instruction</h2>
+                    <p>1. FINAL PAPER: Please submit the files belonging to your camera-ready paper using your EasyChair account. Follow the instructions after the login for uploading two files:</p>
+                    <ul class="submission-list">
+                        <li>either a zipped file containing all your LaTeX sources or a Word file in the RTF format; and</li>
+                        <li>the PDF version of your camera-ready paper</li>
+                    </ul>
+                    
+                    <p>The page limit is 12-15 pages for Full Papers and 6-11 pages for Short Papers and is strict. Please follow strictly the author instructions of Springer-Verlag when preparing the final version.</p>
+                    <ul class="submission-list">
+                        <li><a href="https://protect-au.mimecast.com/s/1VGENCDvyoHEDqmLfcYD?domain=springer.com" class="link">https://protect-au.mimecast.com/s/1VGENCDvyoHEDqmLfcYD?domain=springer.com</a></li>
+                    </ul>
+                    
+                    <p>Our publisher has recently introduced an extra control loop, once data processing is finished, they will contact all corresponding authors and ask them to check their papers. We expect this to happen shortly before the printing of the proceedings. At that time your quick interaction with Springer-Verlag will be greatly appreciated.</p>
+                    
+                    <p>2. COPYRIGHT: Please upload a signed and completed copyright form to us as soon as possible. The Springer copyright form template can be found at <a href="#" class="link">HERE</a>.</p>
+                    
+                    <p>It is sufficient for one of the authors to sign the copyright form. You can scan the form into PDF or any other standard image format.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 添加注册部分 -->
-    <div id="registration" class="page-section">
-        <div class="content">
-            <div class="main">
-                <h2>Registration Requirements</h2>
-                <p>Each accepted paper must be accompanied by at least one Paper Registration regardless of the status of the registering author. Otherwise, the paper will be removed from the proceedings and LNCS digital library. For more information regarding registration use the ICWL-SETE 2024 registration page.</p>
+        <div id="registration" class="page-section">
+            <div class="content">
+                <div class="main">
+                    <h2>Registration Requirements</h2>
+                    <p>Each accepted paper must be accompanied by at least one Paper Registration regardless of the status of the registering author. Otherwise, the paper will be removed from the proceedings and LNCS digital library. For more information regarding registration use the ICWL-SETE 2024 registration page.</p>
 
-                <h2>Registration Information</h2>
-                <p>The registration fee for all participants should be settled in RMB; the USD price is for reference only. The final amount is subject to the real-time exchange rate on the day of payment.</p>
+                    <h2>Registration Information</h2>
+                    <p>The registration fee for all participants should be settled in RMB; the USD price is for reference only. The final amount is subject to the real-time exchange rate on the day of payment.</p>
 
-                <h2>Paper Registration: RMB ¥4000 (Approximately $550)</h2>
-                <ul class="registration-list">
-                    <li>At least one author of each accepted paper must register with a Paper Registration</li>
-                    <li>If you have multiple accepted papers, each paper must have a separate Paper Registration</li>
-                </ul>
+                    <h2>Paper Registration: RMB ¥4000 (Approximately $550)</h2>
+                    <ul class="registration-list">
+                        <li>At least one author of each accepted paper must register with a Paper Registration</li>
+                        <li>If you have multiple accepted papers, each paper must have a separate Paper Registration</li>
+                    </ul>
 
-                <h2>Participant Registration: RMB ¥3000 (Approximately $415)</h2>
-                <ul class="registration-list">
-                    <li>If an author has already made a Paper Registration, then additional non-student author who wish like to attend the conference can register with Participant Registration</li>
-                    <li>Anyone who is not a paper author and not a student can also register with Participant Registration</li>
-                </ul>
+                    <h2>Participant Registration: RMB ¥3000 (Approximately $415)</h2>
+                    <ul class="registration-list">
+                        <li>If an author has already made a Paper Registration, then additional non-student author who wish like to attend the conference can register with Participant Registration</li>
+                        <li>Anyone who is not a paper author and not a student can also register with Participant Registration</li>
+                    </ul>
 
-                <h2>Student Registration: RMB ¥2000 (Approximately $275)</h2>
-                <ul class="registration-list">
-                    <li>If a student author is the only author attending the conference, then the student should register with a Paper Registration instead</li>
-                </ul>
+                    <h2>Student Registration: RMB ¥2000 (Approximately $275)</h2>
+                    <ul class="registration-list">
+                        <li>If a student author is the only author attending the conference, then the student should register with a Paper Registration instead</li>
+                    </ul>
 
-                <h2>Payment Methods</h2>
-                <p>For China mainland, please scan the QR code to pay the registration fee.</p>
-                <p>请主意：使用二维码完成在线支付，且同时支付中英文发票费用。如需要英文发票请在付款备注中注明。</p>
-                <img src="img/qrcode.png" alt="QR Code for payment" class="qr-code">
-                <p>Login with your name and ID number.</p>
+                    <h2>Payment Methods</h2>
+                    <p>For China mainland, please scan the QR code to pay the registration fee.</p>
+                    <p>请主意：使用二维码完成在线支付，且同时支付中英文发票费用。如需要英文发票请在付款备注中注明。</p>
+                    <img src="img/qrcode.png" alt="QR Code for payment" class="qr-code">
+                    <p>Login with your name and ID number.</p>
 
-                <h2>Overseas Payment</h2>
-                <p>For overseas: You can choose to pay on-site at the conference or via bank transfer; the bank account details is:</p>
-                <p>Account Name: Shanghai Jiao Tong University</p>
-                <p>Account Number: 306414229000443</p>
-                <p>Bank Name: Jingan Sub-branch, Shanghai Pudong Development Bank, Shanghai, P. R. China</p>
-                <p>Bank Address: No. 605, West Beijing Road, Shanghai, P.R. China</p>
-                <p>Swift NO.: SPDBCNSH</p>
+                    <h2>Overseas Payment</h2>
+                    <p>For overseas: You can choose to pay on-site at the conference or via bank transfer; the bank account details is:</p>
+                    <p>Account Name: Shanghai Jiao Tong University</p>
+                    <p>Account Number: 306414229000443</p>
+                    <p>Bank Name: Jingan Sub-branch, Shanghai Pudong Development Bank, Shanghai, P. R. China</p>
+                    <p>Bank Address: No. 605, West Beijing Road, Shanghai, P.R. China</p>
+                    <p>Swift NO.: SPDBCNSH</p>
 
-                <p>Remitter: please indicate in the bank transfer remarks "ICWL/SETE/GAIE/ETLL/DLCCE and paper submission ID". Thank you!</p>
+                    <p>Remitter: please indicate in the bank transfer remarks "ICWL/SETE/GAIE/ETLL/DLCCE and paper submission ID". Thank you!</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 添加参会部分 -->
-    <div id="attend" class="page-section">
-        <div class="content">
-            <div class="main">
-                <h2>About Shanghai</h2>
-                <img src="shanghai-skyline.jpg" alt="Shanghai Skyline" class="city-image">
-                <p>Welcome to Shanghai! A busy Shanghai is internationally famous for its rich cultural heritage and modern development. As China's largest city and one of the four municipalities directly under the Central Government, Shanghai is a modern international metropolis with a spirit of innovation, openness and inclusiveness. Located at the estuary of the Yangtze River Delta, one of the most developed regions in China, Shanghai has been playing a leading role in China's reform and opening up.</p>
-                
-                <p>As China's largest economic powerhouse and an important international financial center, Shanghai achieved a GDP of 4.32 trillion yuan in 2022, up 3 percent year-on-year. Shanghai is ranked highest in the world in terms of container throughput for 13 consecutive years, making it a major international shipping center. Shanghai's total imports and exports amounted to 4.19 trillion yuan in 2022, up 3.2 percent year-on-year, contributing to the construction of the Yangshan and Hongqiao national import trade promotion and innovation demonstration zones.</p>
+        <div id="attend" class="page-section">
+            <div class="content">
+                <div class="main">
+                    <h2>About Shanghai</h2>
+                    <img src="shanghai-skyline.jpg" alt="Shanghai Skyline" class="city-image">
+                    <p>Welcome to Shanghai! A busy Shanghai is internationally famous for its rich cultural heritage and modern development. As China's largest city and one of the four municipalities directly under the Central Government, Shanghai is a modern international metropolis with a spirit of innovation, openness and inclusiveness. Located at the estuary of the Yangtze River Delta, one of the most developed regions in China, Shanghai has been playing a leading role in China's reform and opening up.</p>
+                    
+                    <p>As China's largest economic powerhouse and an important international financial center, Shanghai achieved a GDP of 4.32 trillion yuan in 2022, up 3 percent year-on-year. Shanghai is ranked highest in the world in terms of container throughput for 13 consecutive years, making it a major international shipping center. Shanghai's total imports and exports amounted to 4.19 trillion yuan in 2022, up 3.2 percent year-on-year, contributing to the construction of the Yangshan and Hongqiao national import trade promotion and innovation demonstration zones.</p>
 
-                <h2>Venue</h2>
-                <img src="conference-room.jpg" alt="Conference Venue" class="venue-image">
-                <p>The conference will be held at Shanghai University (the main conference room has been confirmed from hotel operator).</p>
+                    <h2>Venue</h2>
+                    <img src="conference-room.jpg" alt="Conference Venue" class="venue-image">
+                    <p>The conference will be held at Shanghai University (the main conference room has been confirmed from hotel operator).</p>
 
-                <h2>Meeting places for the coffee breaks and lunches</h2>
-                <p>Meeting places for the coffee breaks and lunches, we have available a meeting room for the following:</p>
-                <ul class="venue-list">
-                    <li>Location: Jing Yue Building, Shanghai University</li>
-                    <li>Address: Shanghai University (上海大学)</li>
-                    <li>Meeting Place: 3rd Meeting Room (meeting room), Shanghai, China</li>
-                    <li>Address: 上海市宝山区上大路99号</li>
-                </ul>
+                    <h2>Meeting places for the coffee breaks and lunches</h2>
+                    <p>Meeting places for the coffee breaks and lunches, we have available a meeting room for the following:</p>
+                    <ul class="venue-list">
+                        <li>Location: Jing Yue Building, Shanghai University</li>
+                        <li>Address: Shanghai University (上海大学)</li>
+                        <li>Meeting Place: 3rd Meeting Room (meeting room), Shanghai, China</li>
+                        <li>Address: 上海市宝山区上大路99号</li>
+                    </ul>
 
-                <h2>Accommodation</h2>
-                <p>Hotel: In Jing Yue Building of Shanghai University</p>
-                <p>Room Rate: Standard room rate starts from 350 RMB per night</p>
-                
-                <h2>Accommodation Information</h2>
-                <p>We have reserved double rooms for all delegates. You can:</p>
-                <ul class="accommodation-list">
-                    <li>Standard room rate</li>
-                    <li>Breakfast included</li>
-                </ul>
-                
-                <p>We will assist you in making the necessary arrangements.</p>
-                <p>If you have any questions, please contact us at <a href="mailto:icwl-sete2024@gmail.com" class="link">icwl-sete2024@gmail.com</a></p>
+                    <h2>Accommodation</h2>
+                    <p>Hotel: In Jing Yue Building of Shanghai University</p>
+                    <p>Room Rate: Standard room rate starts from 350 RMB per night</p>
+                    
+                    <h2>Accommodation Information</h2>
+                    <p>We have reserved double rooms for all delegates. You can:</p>
+                    <ul class="accommodation-list">
+                        <li>Standard room rate</li>
+                        <li>Breakfast included</li>
+                    </ul>
+                    
+                    <p>We will assist you in making the necessary arrangements.</p>
+                    <p>If you have any questions, please contact us at <a href="mailto:icwl-sete2024@gmail.com" class="link">icwl-sete2024@gmail.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 添加旅行部分 -->
-    <div id="travel" class="page-section">
-        <div class="content">
-            <div class="main">
-                <h2>Travel Information</h2>
-                <h3>Public Transportation:</h3>
-                <p>You can take Metro. As of Dec. 2021, Shanghai Metro had 20 lines in operation (including maglev lines), with 508 stations (including 2 stations on maglev lines), and a total length of 831 km (including 29 km of maglev lines). The statistics do not include Jinshan Railway. Shanghai also has the world's most extensive bus system with nearly one thousand bus lines, operated by numerous transportation companies. Not all of Shanghai's bus routes are numbered - some have names exclusively in Chinese. Bus fares are usually ¥1, ¥1.5 or ¥2, sometimes higher, while Metro fares run from ¥3 to ¥14 depending on distance. To learn more, visit the <a href="#" class="link">Metro & Maglev Train</a> page.</p>
+        <div id="travel" class="page-section">
+            <div class="content">
+                <div class="main">
+                    <h2>Travel Information</h2>
+                    <h3>Public Transportation:</h3>
+                    <p>You can take Metro. As of Dec. 2021, Shanghai Metro had 20 lines in operation (including maglev lines), with 508 stations (including 2 stations on maglev lines), and a total length of 831 km (including 29 km of maglev lines). The statistics do not include Jinshan Railway. Shanghai also has the world's most extensive bus system with nearly one thousand bus lines, operated by numerous transportation companies. Not all of Shanghai's bus routes are numbered - some have names exclusively in Chinese. Bus fares are usually ¥1, ¥1.5 or ¥2, sometimes higher, while Metro fares run from ¥3 to ¥14 depending on distance. To learn more, visit the <a href="#" class="link">Metro & Maglev Train</a> page.</p>
 
-                <h3>Taxi:</h3>
-                <p>Taxis in Shanghai are plentiful and market competition has driven taxi fare down to affordable prices for the average resident (¥14（¥18 after 11pm）for the first 3 kilometers). Taking a taxi is a fast and convenient way to get around Shanghai. The city has the best-managed taxi service in China. To learn more, visit the <a href="#" class="link">Shanghai Taxis</a> page.</p>
+                    <h3>Taxi:</h3>
+                    <p>Taxis in Shanghai are plentiful and market competition has driven taxi fare down to affordable prices for the average resident (¥14（¥18 after 11pm）for the first 3 kilometers). Taking a taxi is a fast and convenient way to get around Shanghai. The city has the best-managed taxi service in China. To learn more, visit the <a href="#" class="link">Shanghai Taxis</a> page.</p>
 
-                <h2>Important Note for Travelers</h2>
-                <h3>Reminder:</h3>
-                <p>You should apply for a visa in good time, in case of any delays during processing. The invitation letter can be downloaded <a href="#" class="link">HERE</a>, which allows you to proceed with the visa application process at <span class="highlight">Chinese Visa Application Service Center</span>.</p>
+                    <h2>Important Note for Travelers</h2>
+                    <h3>Reminder:</h3>
+                    <p>You should apply for a visa in good time, in case of any delays during processing. The invitation letter can be downloaded <a href="#" class="link">HERE</a>, which allows you to proceed with the visa application process at <span class="highlight">Chinese Visa Application Service Center</span>.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 固定的右侧边栏 -->
-    <div class="sidebar-fixed">
-        <div class="quick-links">
-            <h2>Quick Links</h2>
-            <ul>
-                <li><a href="#submission" class="link">Paper Submission</a></li>
-                <li><a href="#registration" class="link">Registration</a></li>
-                <li><a href="#travel" class="link">Travel Information</a></li>
-                <li><a href="#contact" class="link">Contact Us</a></li>
-            </ul>
+        <div class="sidebar-fixed">
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#submission" class="link">Paper Submission</a></li>
+                    <li><a href="#registration" class="link">Registration</a></li>
+                    <li><a href="#travel" class="link">Travel Information</a></li>
+                    <li><a href="#contact" class="link">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <div id="contact" class="page-section contact-section">
-        <h2>Contact Us</h2>
-        <p>All inquiries about the workshop, including submissions, can be emailed to 
-            <a href="mailto:hongzhou1@gdpt.edu.cn" class="link">hongzhou1@gdpt.edu.cn</a>
-        </p>
-    </div>
+        <div id="contact" class="page-section contact-section">
+            <h2>Contact Us</h2>
+            <p>All inquiries about the workshop, including submissions, can be emailed to 
+                <a href="mailto:hongzhou1@gdpt.edu.cn" class="link">hongzhou1@gdpt.edu.cn</a>
+            </p>
+        </div>
 
-    <div class="footer">
-        <p>Copyright © 2025 AIVE</p>
-    </div>
+        <div class="footer">
+            <p>Copyright © 2025 AIVE</p>
+        </div>
 
-    <!-- 添加返回顶部按钮 -->
-    <button class="back-to-top" title="Back to top">↑</button>
+        <button class="back-to-top" title="Back to top">↑</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 处理导航点击事件
+            const navLinks = document.querySelectorAll('.nav a');
+            const sections = document.querySelectorAll('.page-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有active类
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => {
+                        s.style.display = 'none';  // 先隐藏所有section
+                        s.classList.remove('active');
+                    });
+                    
+                    // 添加active类到当前点击的链接
+                    this.classList.add('active');
+                    
+                    // 显示对应的section
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';  // 显示目标section
+                        targetSection.classList.add('active');
+                        // 平滑滚动到顶部
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 返回顶部按钮功能
             const backToTop = document.querySelector('.back-to-top');
-            
-            // 监听滚动事件
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
                     backToTop.classList.add('visible');
@@ -1176,7 +1199,6 @@
                 }
             });
             
-            // 点击返回顶部
             backToTop.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
