@@ -1199,6 +1199,11 @@
 
             // 处理页面切换的函数
             function switchPage(targetId) {
+                // 如果没有指定targetId，默认显示home
+                if (!targetId) {
+                    targetId = 'home';
+                }
+
                 // 移除所有active类
                 navLinks.forEach(l => l.classList.remove('active'));
                 sections.forEach(s => {
@@ -1217,10 +1222,6 @@
                 if (targetSection) {
                     targetSection.style.display = 'block';
                     targetSection.classList.add('active');
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
                 }
             }
 
@@ -1230,26 +1231,20 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     switchPage(targetId);
+                    // 更新URL，但不触发页面刷新
+                    history.pushState(null, '', `#${targetId}`);
                 });
             });
 
-            // 处理URL hash变化
-            window.addEventListener('hashchange', function() {
-                const hash = window.location.hash.substring(1);
-                if (hash) {
-                    switchPage(hash);
-                } else {
-                    switchPage('home');  // 如果没有hash，显示home页面
-                }
-            });
-
-            // 页面加载时检查URL hash
-            if (window.location.hash) {
+            // 处理浏览器前进/后退按钮
+            window.addEventListener('popstate', function() {
                 const hash = window.location.hash.substring(1);
                 switchPage(hash);
-            } else {
-                switchPage('home');  // 默认显示home页面
-            }
+            });
+
+            // 页面首次加载时处理
+            const initialHash = window.location.hash.substring(1);
+            switchPage(initialHash);
 
             // 返回顶部按钮功能
             const backToTop = document.querySelector('.back-to-top');
