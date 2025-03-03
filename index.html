@@ -559,6 +559,40 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+
+        /* Contact Us 页面样式更新 */
+        #contact.page-section {
+            width: 100%;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-section h2 {
+            color: var(--primary-color);
+            font-family: var(--header-font);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            margin: 0 auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .contact-section .link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-section .link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -1140,11 +1174,15 @@
             </div>
         </div>
 
-        <div id="contact" class="page-section contact-section">
-            <h2>Contact Us</h2>
-            <p>All inquiries about the workshop, including submissions, can be emailed to 
-                <a href="mailto:hongzhou1@gdpt.edu.cn" class="link">hongzhou1@gdpt.edu.cn</a>
-            </p>
+        <div id="contact" class="page-section">
+            <div class="content">
+                <div class="contact-section">
+                    <h2>Contact Us</h2>
+                    <p>All inquiries about the workshop, including submissions, can be emailed to 
+                        <a href="mailto:hongzhou1@gdpt.edu.cn" class="link">hongzhou1@gdpt.edu.cn</a>
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -1156,38 +1194,62 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 处理导航点击事件
             const navLinks = document.querySelectorAll('.nav a');
             const sections = document.querySelectorAll('.page-section');
 
+            // 处理页面切换的函数
+            function switchPage(targetId) {
+                // 移除所有active类
+                navLinks.forEach(l => l.classList.remove('active'));
+                sections.forEach(s => {
+                    s.style.display = 'none';
+                    s.classList.remove('active');
+                });
+                
+                // 添加active类到对应的导航链接
+                const targetLink = document.querySelector(`.nav a[href="#${targetId}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+                
+                // 显示对应的section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    targetSection.classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // 处理导航点击事件
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // 移除所有active类
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    sections.forEach(s => {
-                        s.style.display = 'none';  // 先隐藏所有section
-                        s.classList.remove('active');
-                    });
-                    
-                    // 添加active类到当前点击的链接
-                    this.classList.add('active');
-                    
-                    // 显示对应的section
                     const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.style.display = 'block';  // 显示目标section
-                        targetSection.classList.add('active');
-                        // 平滑滚动到顶部
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }
+                    switchPage(targetId);
                 });
             });
+
+            // 处理URL hash变化
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    switchPage(hash);
+                } else {
+                    switchPage('home');  // 如果没有hash，显示home页面
+                }
+            });
+
+            // 页面加载时检查URL hash
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                switchPage(hash);
+            } else {
+                switchPage('home');  // 默认显示home页面
+            }
 
             // 返回顶部按钮功能
             const backToTop = document.querySelector('.back-to-top');
