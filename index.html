@@ -593,6 +593,47 @@
             color: var(--secondary-color);
             text-decoration: underline;
         }
+
+        /* Workshop Topics 样式更新 */
+        .topics-container {
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);  /* 改为两列布局 */
+            gap: 15px;  /* 减小间距 */
+        }
+
+        .topic-section {
+            background: var(--light-bg);
+            padding: 15px;
+            margin-bottom: 0;  /* 移除底部边距，使用grid gap控制 */
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .topic-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .topic-section ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        .topic-section li {
+            margin-bottom: 5px;
+            line-height: 1.3;
+            font-size: 0.95em;
+        }
+
+        /* 确保在移动设备上正确显示 */
+        @media (max-width: 768px) {
+            .topics-container {
+                grid-template-columns: 1fr;  /* 在移动设备上改为单列 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -620,7 +661,10 @@
             <div class="content">
                 <div class="main">
                     <h2>Welcome to AIVE 2025</h2>
-                    <p>Empowering Workforce Development through Innovation Artificial Intelligence (AI) technologies—including machine learning, natural language processing, and adaptive systems—are reshaping vocational education by enabling skill-centric, industry-aligned training frameworks. These innovations empower educators and institutions to bridge the gap between theoretical knowledge and practical workplace competencies, preparing learners for evolving labor market demands. As industries increasingly prioritize digital fluency and technical proficiency, vocational educators face challenges in delivering scalable, up-to-date training programs that address rapid technological advancements. AI-driven solutions, recognized for their capabilities in personalized learning pathways, real-time skill assessment, and automated content adaptation, are proving critical for modernizing vocational education. Applications range from AI-powered simulation platforms for hands-on technical training to intelligent career guidance systems that align learner profiles with industry needs, while fostering equitable access to lifelong learning opportunities.</p>
+                    <p>Artificial Intelligence (AI) technologies—including machine learning, natural language processing, and adaptive systems—are reshaping vocational education by enabling skill-centric, industry-aligned training frameworks. These innovations empower educators and institutions to bridge the gap between theoretical knowledge and practical workplace competencies, preparing learners for evolving labor market demands.  
+<br><br>
+                        As industries increasingly prioritize digital fluency and technical proficiency, vocational educators face challenges in delivering scalable, up-to-date training programs that address rapid technological advancements. AI-driven solutions, recognized for their capabilities in personalized learning pathways, real-time skill assessment, and automated content adaptation, are proving critical for modernizing vocational education. Applications range from AI-powered simulation platforms for hands-on technical training to intelligent career guidance systems that align learner profiles with industry needs, while fostering equitable access to lifelong learning opportunities.
+                        </p>
 
                     <h2>Important Dates</h2>
                     <div class="important-dates-grid">
@@ -650,13 +694,91 @@
                         </div>
                     </div>
 
-                    <h2>Workshop topics of interest include, but are not limited to, the following:</h2>
-                    <ul class="topics-list">
-                        <li>AI-driven curriculum design for industry-specific skill development</li>
-                        <li>Adaptive assessment tools for competency-based certification</li>
-                        <li>Ethical frameworks for AI deployment in vocational training</li>
-                        <li>Collaborative models between educational institutions and employers</li>
-                    </ul>
+                        <h2>Workshop Objectives</h2>
+                        <p>The <em>International Workshop on Artificial Intelligence in Vocational Education (AIVE)</em> aims to explore how AI can transform vocational education by focusing on five key pillars:</p>
+                        <ol>
+                            <li><strong>Empowering Majors</strong>: Leveraging AI to design and optimize industry-aligned majors that meet current and future workforce demands.</li>
+                            <li><strong>Enhancing Courses</strong>: Developing AI-driven course content and delivery methods that ensure relevance, engagement, and adaptability.</li>
+                            <li><strong>Strengthening Internship Bases</strong>: Utilizing AI to connect students with tailored internship opportunities, bridging the gap between education and industry practice.</li>
+                            <li><strong>Revolutionizing Textbooks</strong>: Creating dynamic, AI-powered digital textbooks and learning resources that adapt to individual learner needs and industry trends.</li>
+                            <li><strong>Supporting Teachers</strong>: Equipping educators with AI tools for personalized instruction, real-time feedback, and professional development.</li>
+                        </ol>
+
+                        <p>Through these focus areas, AIVE seeks to foster collaboration among researchers, vocational trainers, industry leaders, and policymakers to build a robust ecosystem for AI-enhanced vocational education.</p>
+
+                        <h2>Interdisciplinary Collaboration</h2>
+                        <p>By fostering dialogue between academia and industry, AIVE aims to catalyze the creation of agile, future-ready vocational education systems. This workshop will highlight case studies, datasets, and methodologies that demonstrate AI's role in enhancing employability, reducing skills mismatches, and promoting inclusive economic growth.</p>
+
+                        <h2>Workshop Topics</h2>
+                        <p>Workshop topics of interest include, but are not limited to, the following:</p>
+
+                        <div class="topics-container">
+                            <div class="topic-section">
+                                <h3>1. Empowering Majors</h3>
+                                <ul>
+                                    <li>AI-driven curriculum design for industry-aligned vocational majors</li>
+                                    <li>Predictive analytics for identifying emerging skills and workforce demands</li>
+                                    <li>AI tools for mapping learner competencies to industry requirements</li>
+                                    <li>Case studies of AI-enhanced majors in fields like healthcare, engineering, and IT</li>
+                                    <li>Ethical considerations in designing AI-powered vocational programs</li>
+                                </ul>
+                            </div>
+
+                            <div class="topic-section">
+                                <h3>2. Enhancing Courses</h3>
+                                <ul>
+                                    <li>Adaptive learning systems for personalized course delivery</li>
+                                    <li>AI-powered simulations and virtual labs for hands-on training</li>
+                                    <li>Gamification and AI in vocational course engagement</li>
+                                    <li>Real-time feedback and assessment tools for skill development</li>
+                                    <li>Multilingual AI tools for inclusive course delivery</li>
+                                </ul>
+                            </div>
+
+                            <div class="topic-section">
+                                <h3>3. Strengthening Internship Bases</h3>
+                                <ul>
+                                    <li>AI platforms for matching students with industry internships</li>
+                                    <li>Virtual internship programs powered by AI and immersive technologies</li>
+                                    <li>AI tools for monitoring and evaluating internship performance</li>
+                                    <li>Collaboration models between vocational institutions and industry partners</li>
+                                    <li>AI-driven career guidance systems for internship placement</li>
+                                </ul>
+                            </div>
+
+                            <div class="topic-section">
+                                <h3>4. Revolutionizing Textbooks</h3>
+                                <ul>
+                                    <li>AI-powered adaptive textbooks and digital learning resources</li>
+                                    <li>Generative AI for creating customized vocational training materials</li>
+                                    <li>Interactive and multimedia-rich AI-enhanced textbooks</li>
+                                    <li>AI tools for updating content in real-time based on industry trends</li>
+                                    <li>Accessibility features in AI-driven educational resources</li>
+                                </ul>
+                            </div>
+
+                            <div class="topic-section">
+                                <h3>5. Supporting Teachers</h3>
+                                <ul>
+                                    <li>AI-assisted tools for lesson planning and content creation</li>
+                                    <li>Professional development programs for educators using AI</li>
+                                    <li>AI-powered analytics for tracking student progress and providing feedback</li>
+                                    <li>Virtual teaching assistants for vocational trainers</li>
+                                    <li>Ethical AI practices in teacher-student interactions</li>
+                                </ul>
+                            </div>
+
+                            <div class="topic-section">
+                                <h3>6. Cross-Cutting Topics</h3>
+                                <ul>
+                                    <li>AI for bridging the skills gap in vocational education</li>
+                                    <li>Ethical and inclusive AI in workforce training</li>
+                                    <li>AI-powered lifelong learning platforms for vocational upskilling</li>
+                                    <li>Case studies of successful AI integration in vocational education systems</li>
+                                    <li>Collaborative frameworks for academia-industry partnerships in AI-driven education</li>
+                                </ul>
+                            </div>
+                        </div>
 
                     <h2>Related Conference</h2>
                     <div class="related-conference">
